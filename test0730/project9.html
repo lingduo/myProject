@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script src="knockout-3.4.2.js"></script>
+</head>
+<body>
+    <!--<div>-->
+        <!--you've clicked <span data-bind="text: tips"></span> times-->
+        <!--<button data-bind="click: clickEvent">click here</button>-->
+    <!--</div>-->
+<ul data-bind="foreach: places">
+    <li>
+        <span data-bind="text: $data"></span>
+        <button data-bind="click: $parent.removePlace">remove</button>
+    </li>
+</ul>
+</body>
+<script>
+    function myViewModel() {
+        var self = this;
+        self.places = ko.observableArray(['lodong','geowe','aeghe'])
+        self.removePlace = function (sth) {
+            self.places.remove(sth)
+        }
+    };
+    ko.applyBindings(new myViewModel());
+    // var viewModel ={
+    //     tips: ko.observable(0),
+    //     clickEvent: function () {
+    //         var clickCount = this.tips();
+    //         this.tips(clickCount+1);
+    //     }
+    // }
+    // ko.applyBindings(viewModel);
+</script>
+</html>

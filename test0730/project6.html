@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script src="knockout-3.4.2.js"></script>
+</head>
+<body>
+<h4>people</h4>
+<ul data-bind="foreach:people">
+    <li>
+        Name at position:
+        <span data-bind="text: name"></span>
+        <a href="#" data-bind="click: $parent.removePerson">Remove</a>
+    </li>
+</ul>
+<input data-bind="value: addName"/>
+<button data-bind="click: addPerson">Add</button>
+<script>
+    // function AppViewModel() {
+    //     var self = this;
+    //
+    //     self.people = ko.observableArray([
+    //         { name: 'Bert' },
+    //         { name: 'Charles' },
+    //         { name: 'Denise' }
+    //     ]);
+    //
+    //     self.addPerson = function() {
+    //         self.people.push({ name: "New at " + new Date() });
+    //     };
+    //
+    //     self.removePerson = function() {
+    //         self.people.remove(this);
+    //     }
+    // }
+    //
+    // ko.applyBindings(new AppViewModel());
+    //
+
+    var app = function () {
+        this.people = ko.observableArray([
+            { name: 'cesc' },
+            { name: 'geri' },
+            { name: 'fabiregas' },
+            { name: 'pique' }
+        ]);
+        this.addName = ko.observable('555');
+        this.addPerson = function () {
+            var number = this.addName();
+            this.people.push({name:number})
+        };
+        var self = this;
+        this.removePerson = function () {
+            self.people.remove(this);
+
+        }
+    };
+    ko.applyBindings(new app());
+</script>
+</body>
+</html>

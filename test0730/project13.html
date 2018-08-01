@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script src="knockout-3.4.2.js"></script>
+</head>
+<body>
+<!--<p>-->
+    <!--Choose some countries you'd like to visit:-->
+    <!--<select data-bind="options: availableCountries, selectedOptions: chosenCountries" size="5" multiple="true"></select>-->
+<!--</p>-->
+
+<!--<script type="text/javascript">-->
+    <!--var viewModel = {-->
+        <!--availableCountries : ko.observableArray(['France', 'Germany', 'Spain']),-->
+        <!--chosenCountries : ko.observableArray(['Germany']) // Initially, only Germany is selected-->
+    <!--};-->
+
+    <!--// ... then later ...-->
+    <!--// viewModel.chosenCountries.push('France'); // Now France is selected too-->
+    <!--ko.applyBindings(viewModel)-->
+<!--</script>-->
+
+
+
+<!--<h2>Participants</h2>-->
+<!--Here are the participants:-->
+<!--<div data-bind="template: { name: 'person-template', data: buyer }"></div>-->
+<!--<div data-bind="template: { name: 'person-template', data: seller }"></div>-->
+
+<!--<script type="text/html" id="person-template">-->
+    <!--<h3 data-bind="text: name"></h3>-->
+    <!--<p>Credits: <span data-bind="text: credits"></span></p>-->
+<!--</script>-->
+
+<!--<script type="text/javascript">-->
+    <!--var MyViewModel = {-->
+        <!--buyer:{ name: 'Franklin', credits: 250 },-->
+        <!--seller:{ name: 'Mario', credits: 5800 }-->
+    <!--};-->
+    <!--ko.applyBindings(MyViewModel);-->
+<!--</script>-->
+
+
+<!--<ul data-bind="template: { name: 'seasonTemplate', foreach: seasons, as:'season'}"></ul>-->
+
+<!--<script id="seasonTemplate" type="text/html">-->
+    <!--<li>-->
+        <!--<strong data-bind="text:name"></strong>-->
+        <!--<ul data-bind="template: { name: 'monthTemplate', foreach: months, as: 'month'}"></ul>-->
+    <!--</li>-->
+<!--</script>-->
+<!--<script id="monthTemplate" type="text/html">-->
+    <!--<li>-->
+        <!--<span data-bind="text: month"></span> is in <span data-bind="text: season.name"></span>-->
+    <!--</li>-->
+<!--</script>-->
+<!--<script>-->
+    <!--var viewModel = {-->
+        <!--seasons: ko.observableArray([-->
+            <!--{ name: 'Spring', months:[ 'March', 'April', 'May' ]},-->
+            <!--{ name: 'Summer', months: [ 'June', 'July', 'August' ] },-->
+            <!--{ name: 'Autumn', months: [ 'September', 'October', 'November' ] },-->
+            <!--{ name: 'Winter', months: [ 'December', 'January', 'February' ] }-->
+        <!--])-->
+    <!--};-->
+    <!--ko.applyBindings(viewModel);-->
+<!--</script>-->
+
+
+
+</body>
+</html>

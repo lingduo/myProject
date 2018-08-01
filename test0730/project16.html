@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script src="knockout-3.4.2.js"></script>
+</head>
+<body>
+    <ul data-bind="foreach: products">
+        <li class="product">
+            <strong data-bind="text:name"></strong>
+            <like-or-dislike params="value: userRating"></like-or-dislike>
+        </li>
+    </ul>
+    <button data-bind="click: addProduct">Add a product</button>
+
+    <script>
+        function Product(name, rating) {
+            this.name = name;
+            this.userRating = ko.observable(rating || null);
+        }
+
+        function myViewModel() {
+            this.products = ko.observableArray();
+        }
+
+        myViewModel.prototype.addProduct = function () {
+            var name = 'Product' + ( this.products().length );
+            this.products.push(new Product(name));
+        };
+        ko.applyBindings(new myViewModel());
+    </script>
+</body>
+</html>

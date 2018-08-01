@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script src="knockout-3.4.2.js"></script>
+</head>
+<body>
+    The item is <span data-bind="text: priceRating"></span> today.
+
+</body>
+<script>
+    var app =function () {
+        this.price = ko.observable(5)
+        this.priceRating = ko.pureComputed(function () {
+            return this.price() > 50 ? 'expensive' : 'afford'
+        },this)
+    }
+    ko.applyBindings(new app());
+
+</script>
+</html>
